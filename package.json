@@ -17,10 +17,13 @@
   "author": "sidhik",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^10.1.2"
+    "electron": "^10.1.2",
+    "nodemon": "^2.0.4"
   },
   "dependencies": {
     "date-and-time": "^0.14.1",
+    "say": "^0.16.0",
+    "speak-tts": "^2.0.8",
     "text-to-speech-js": "^1.1.10"
   }
 }

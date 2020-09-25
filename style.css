@@ -11,6 +11,7 @@ body{
 }
 .am-pm-container{
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -19,6 +20,12 @@ body{
     left: 2rem;
     /* top: 1rem; */
     font-size: 2rem;
+}
+
+.am-pm-container i{
+    position: relative;
+    right: 2rem;
+    cursor: pointer;
 }
 
 .time-container{
