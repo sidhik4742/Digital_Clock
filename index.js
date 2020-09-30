@@ -2,6 +2,14 @@ const date = require("date-and-time");
 
 const pattern = date.compile("dddd MMM DD YYYY hh mm ss A");
 
+let timers = [
+  "10 Minute",
+  "20 Minute",
+  "30 Minute",
+  "40 Minute",
+  "50 Minute",
+  "60 Minute",
+];
 //*? Genarate and format date/////////
 const newDate = () => {
   let now = new Date();
@@ -10,13 +18,13 @@ const newDate = () => {
 };
 
 //*? created a audio element in the dom and play the audio string//////
-const speaking = (url) => {
-  console.log(url);
+const speaking = (aud) => {
+  console.log(aud);
   let audio = document.createElement("AUDIO");
-  audio.setAttribute("src", url);
+  audio.setAttribute("src", aud);
   audio.play();
 
-  console.log(url);
+  console.log(aud);
 };
 
 //*? Take value frome the dom and create url////////
@@ -73,6 +81,33 @@ document.getElementById("speaker").addEventListener("click", (event) => {
   // var currentTime = newDate();
   event.preventDefault();
   speaking(createUrl());
+});
+
+document.getElementById("timer").addEventListener("change", () => {
+  let alaram = document.getElementById("alaram");
+  alaram.pause();
+  let timeOut;
+  clearTimeout(timeOut);
+  let selectedIndex = document.getElementById("timer").selectedIndex;
+  let option = document.getElementById("timer").options;
+  console.log(option[selectedIndex].text);
+  let timer = option[selectedIndex].text;
+
+  timer = timer.split(" ");
+  console.log(timer);
+
+  timeOut = setTimeout(() => {
+    console.log("Timer is reached");
+    alaram.play();
+  }, 60000);
+});
+
+let select = document.getElementById("timer");
+timers.forEach((timer, index, Array) => {
+  let option = document.createElement("option");
+  option.id = `timer-${index}`;
+  option.text = timer;
+  select.options.add(option, index);
 });
 
 /*
