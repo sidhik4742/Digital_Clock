@@ -3,6 +3,8 @@ const date = require("date-and-time");
 const pattern = date.compile("dddd MMM DD YYYY hh mm ss A");
 
 let timers = [
+  "Choose",
+  "5 Minute",
   "10 Minute",
   "20 Minute",
   "30 Minute",
@@ -36,6 +38,7 @@ const createUrl = () => {
   console.log(ampm);
   // *! Thursday Sep 24 2020 /////12 35 02///// PM //
   currentTime = currentTime.split(":");
+  
 
   var time = `The time is,${currentTime[0]},${currentTime[1]} `;
   console.log(time);
@@ -96,11 +99,14 @@ document.getElementById("timer").addEventListener("change", () => {
   timer = timer.split(" ");
   console.log(timer);
 
+  console.log("start");
+
   timeOut = setTimeout(() => {
     console.log("Timer is reached");
     alaram.play();
-  }, 60000);
+  }, parseInt(timer[0])*60000);
 });
+
 
 let select = document.getElementById("timer");
 timers.forEach((timer, index, Array) => {
