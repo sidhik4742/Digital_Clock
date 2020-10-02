@@ -33,14 +33,31 @@ const speaking = (aud) => {
 const createUrl = () => {
   let currentTime = document.getElementById("time").innerText;
   let ampm = document.getElementById("ampm").innerText;
+  let hourWithZero = null;
+  let hourWithOutZero
+  let minuteWithOutZero = null;
+  let time = '';
 
   console.log(currentTime);
   console.log(ampm);
   // *! Thursday Sep 24 2020 /////12 35 02///// PM //
   currentTime = currentTime.split(":");
+  hourWithZero = currentTime[0].substring(1, 0);
+  console.log(hourWithZero);
+  if (hourWithZero == "0") {
+    hourWithOutZero = currentTime[0].substring(1);
+  }else{
+    hourWithOutZero = currentTime[0];
+  }
   
+  if (currentTime != '00') {
+    minuteWithOutZero = currentTime[1];
+  } else{
+    minuteWithOutZero = '';
+  }
 
-  var time = `The time is,${currentTime[0]},${currentTime[1]} `;
+  time = `The time is,${hourWithOutZero},${minuteWithOutZero} `;
+
   console.log(time);
   // console.log(typeof time);
 
@@ -104,9 +121,8 @@ document.getElementById("timer").addEventListener("change", () => {
   timeOut = setTimeout(() => {
     console.log("Timer is reached");
     alaram.play();
-  }, parseInt(timer[0])*60000);
+  }, parseInt(timer[0]) * 60000);
 });
-
 
 let select = document.getElementById("timer");
 timers.forEach((timer, index, Array) => {

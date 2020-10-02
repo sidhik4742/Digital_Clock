@@ -1,45 +1,51 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto Mono', monospace;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Mono", monospace;
 }
 
-body{
-    background-image: linear-gradient(to left,#660066,#ff00ff);
-    -webkit-user-select: none;
-    -webkit-app-region: drag;
+body {
+  background-image: linear-gradient(to left, #660066, #ff00ff);
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
 }
-.am-pm-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.am-pm-container h3{
-    position: relative;
-    left: 2rem;
-    /* top: 1rem; */
-    font-size: 2rem;
+.am-pm-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.am-pm-container i{
-    position: relative;
-    right: 2rem;
-    cursor: pointer;
+.am-pm-container h3 {
+  position: relative;
+  left: 2rem;
+  /* top: 1rem; */
+  font-size: 2rem;
 }
 
-.time-container{
-    /* margin-top: 0.5rem; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-        
+.am-pm-container i {
+  position: relative;
+  right: 2rem;
+  cursor: pointer;
 }
-.time-container h1{
-    font-size: 4rem;
-    font-weight: bold;
+
+.am-pm-container .timer {
+  background: transparent;
 }
-.date-container h4{
-    font-size: medium;
-    text-align: center;
+.am-pm-container .timer option {
+  background: transparent;
+}
+
+.time-container {
+  /* margin-top: 0.5rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.time-container h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+.date-container h4 {
+  font-size: medium;
+  text-align: center;
 }
