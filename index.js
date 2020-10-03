@@ -26,7 +26,7 @@ const speaking = (aud) => {
   audio.setAttribute("src", aud);
   audio.play();
 
-  console.log(aud);
+  // console.log(aud);
 };
 
 //*? Take value frome the dom and create url////////
@@ -50,7 +50,7 @@ const createUrl = () => {
     hourWithOutZero = currentTime[0];
   }
   
-  if (currentTime != '00') {
+  if (currentTime[1] != "00") {
     minuteWithOutZero = currentTime[1];
   } else{
     minuteWithOutZero = '';

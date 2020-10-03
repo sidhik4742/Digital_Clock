@@ -30,6 +30,8 @@ body {
 
 .am-pm-container .timer {
   background: transparent;
+  border-color: black;
+  outline: black;
 }
 .am-pm-container .timer option {
   background: transparent;
